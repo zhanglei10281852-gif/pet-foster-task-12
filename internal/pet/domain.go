@@ -41,13 +41,6 @@ type Pet struct {
 	UpdatedAt           time.Time `json:"updateTime"`
 }
 
-func (p Pet) ResolveOwner(principal Principal) int64 {
-	if p.OwnerID != 0 {
-		return p.OwnerID
-	}
-	return principal.UserID
-}
-
 type Room struct {
 	ID               int64     `json:"roomId"`
 	Number           string    `json:"roomNumber"`
